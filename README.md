@@ -1,4 +1,4 @@
-Yii2 Queue Analytics Module
+Yii2 Queue Analytics Module + Bootstrap 5
 ===========================
 
 The module collects statistics about working of queues of an application, and provides web interface
@@ -12,11 +12,22 @@ Installation
 ------------
 
 The preferred way to install the extension is through [composer](http://getcomposer.org/download/).
-Add to the require section of your `composer.json` file:
+
+Add to the `require` section of your `composer.json` file:
 
 ```
-"zhuravljov/yii2-queue-monitor": "~0.1"
+"xcopy/yii2-queue-monitor": "dev-master"
 ```
+
+Add to the `repositories` section of your `composer.json` file:
+
+```
+{
+   "type": "vcs",
+   "url": "https://github.com/xcopy/yii2-queue-monitor"
+}
+```
+
 
 Usage
 -----
