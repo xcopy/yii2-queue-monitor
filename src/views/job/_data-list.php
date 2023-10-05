@@ -5,7 +5,7 @@
  * @var string[] $values
  */
 
-use yii\bootstrap\Html;
+use yii\bootstrap5\Html;
 
 ?>
 <datalist id="<?= Html::encode($id) ?>">

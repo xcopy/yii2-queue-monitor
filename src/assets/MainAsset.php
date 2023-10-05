@@ -7,9 +7,9 @@
 
 namespace zhuravljov\yii\queue\monitor\assets;
 
-use yii\bootstrap\BootstrapAsset;
-use yii\bootstrap\BootstrapPluginAsset;
-use yii\bootstrap\BootstrapThemeAsset;
+use yii\bootstrap5\BootstrapAsset;
+use yii\bootstrap5\BootstrapIconAsset;
+use yii\bootstrap5\BootstrapPluginAsset;
 use yii\web\AssetBundle;
 use yii\web\YiiAsset;
 
@@ -28,8 +28,7 @@ class MainAsset extends AssetBundle
     ];
     public $depends = [
         YiiAsset::class,
-        BootstrapAsset::class,
+        BootstrapIconAsset::class,
         BootstrapPluginAsset::class,
-        BootstrapThemeAsset::class,
     ];
 }

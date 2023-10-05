@@ -27,7 +27,7 @@ switch ($status) {
         $statusClass = 'bg-danger';
         break;
     default:
-        $statusClass = 'bg-default';
+        $statusClass = 'bg-light';
 }
 ?>
 <div class="job-item <?= $statusClass ?>">

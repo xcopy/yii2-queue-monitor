@@ -1,5 +1,5 @@
 {
-    "name": "zhuravljov/yii2-queue-monitor",
+    "name": "xcopy/yii2-queue-monitor",
     "description": "Yii2 Queue Analytics Module",
     "type": "yii2-extension",
     "keywords": ["yii", "queue", "analytics", "module"],
@@ -8,18 +8,22 @@
         {
             "name": "Roman Zhuravlev",
             "email": "zhuravljov@gmail.com"
+        },
+        {
+            "name": "Kairat Jenishev",
+            "email": "kairat.jenishev@gmail.com"
         }
     ],
     "support": {
-        "issues": "https://github.com/zhuravljov/yii2-queue-monitor/issues",
-        "source": "https://github.com/zhuravljov/yii2-queue-monitor"
+        "issues": "https://github.com/xcopy/yii2-queue-monitor/issues",
+        "source": "https://github.com/xcopy/yii2-queue-monitor"
     },
     "require": {
         "php": ">=5.5.0",
         "ext-pdo": "*",
         "yiisoft/yii2": "~2.0.14",
         "yiisoft/yii2-queue": ">=2.2.0",
-        "yiisoft/yii2-bootstrap": "~2.0.0"
+        "yiisoft/yii2-bootstrap5": "~2.0"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

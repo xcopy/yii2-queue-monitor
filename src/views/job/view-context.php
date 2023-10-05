@@ -8,10 +8,13 @@ use zhuravljov\yii\queue\monitor\Module;
 
 echo $this->render('_view-nav', ['record' => $record]);
 
-$this->params['breadcrumbs'][] = Module::t('main', 'Environment');
+$this->title = Module::t('main', 'Context');
+$this->params['breadcrumbs'][] = $this->title;
 
 $format = Module::getInstance()->formatter;
+
 ?>
+
 <div class="monitor-job-env">
     <h3><?= Module::t('main', 'Push Trace') ?></h3>
     <pre><?= $record->trace ?></pre>

@@ -4,7 +4,7 @@
  * @var array $values
  */
 
-use yii\bootstrap\Html;
+use yii\bootstrap5\Html;
 use yii\helpers\VarDumper;
 use zhuravljov\yii\queue\monitor\Module;
 

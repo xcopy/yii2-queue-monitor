@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @var \yii\web\View $this
  * @var JobFilter $filter
@@ -12,6 +13,8 @@ use zhuravljov\yii\queue\monitor\filters\JobFilter;
 use zhuravljov\yii\queue\monitor\Module;
 use zhuravljov\yii\queue\monitor\widgets\FilterBar;
 
+$this->title = Module::t('main', 'Queue Monitor');
+
 if (JobFilter::restoreParams()) {
     $this->params['breadcrumbs'][] = ['label' => Module::t('main', 'Jobs'), 'url' => ['index']];
     $this->params['breadcrumbs'][] = Module::t('main', 'Filtered');
@@ -20,15 +23,17 @@ if (JobFilter::restoreParams()) {
 }
 
 JobItemAsset::register($this);
+
 ?>
+
 <div class="monitor-job-index">
     <div class="row">
-        <div class="col-lg-3 col-lg-push-9">
+        <div class="col-lg-3 order-1">
             <?php FilterBar::begin() ?>
             <?= $this->render('_job-filter', compact('filter')) ?>
             <?php FilterBar::end() ?>
         </div>
-        <div class="col-lg-9 col-lg-pull-3">
+        <div class="col-lg-9 order-0">
             <?php Pjax::begin() ?>
             <?= ListView::widget([
                 'dataProvider' => new ActiveDataProvider([
