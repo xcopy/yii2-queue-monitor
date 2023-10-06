@@ -20,8 +20,8 @@ body {
     padding-top: 20px;
 }
 .navbar-brand {
-    background: url(logo.png) 15px center no-repeat;
-    padding-left: 50px;
+    background: url(logo.png) 0 center no-repeat;
+    padding-left: 40px;
 }
 .not-set {
     color: #c55;
