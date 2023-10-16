@@ -13,21 +13,21 @@ $format = Module::getInstance()->formatter;
 $status = $model->getStatus();
 switch ($status) {
     case PushRecord::STATUS_STOPPED:
-        $statusClass = 'bg-info';
+        $statusClass = 'bg-info-subtle';
         break;
     case PushRecord::STATUS_WAITING:
     case PushRecord::STATUS_STARTED:
-        $statusClass = 'bg-success';
+        $statusClass = 'bg-success-subtle';
         break;
     case PushRecord::STATUS_FAILED:
     case PushRecord::STATUS_RESTARTED:
-        $statusClass = 'bg-warning';
+        $statusClass = 'bg-warning-subtle';
         break;
     case PushRecord::STATUS_BURIED:
-        $statusClass = 'bg-danger';
+        $statusClass = 'bg-danger-subtle';
         break;
     default:
-        $statusClass = 'bg-light';
+        $statusClass = 'bg-light-subtle';
 }
 ?>
 <div class="job-item <?= $statusClass ?>">
