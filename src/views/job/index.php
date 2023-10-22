@@ -49,6 +49,12 @@ JobItemAsset::register($this);
                 'emptyTextOptions' => ['class' => Module::t('main', 'empty lead')],
                 'itemView' => '_index-item',
                 'itemOptions' => ['tag' => null],
+                'pager' => [
+                    'class' => 'yii\bootstrap5\LinkPager',
+                    'listOptions' => ['class' => 'pagination justify-content-center'],
+                    'firstPageLabel' => '&larr;',
+                    'lastPageLabel' => '&rarr;',
+                ],
             ]) ?>
             <?php Pjax::end() ?>
         </div>
