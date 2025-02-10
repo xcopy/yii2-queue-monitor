@@ -39,6 +39,7 @@ $format = Module::getInstance()->formatter;
                     'started_at' => SORT_ASC,
                 ],
             ],
+            'pagination' => ['pageSize' => 50]
         ]),
         'emptyText' => Module::t('main', 'No workers found.'),
         'tableOptions' => ['class' => 'table table-hover'],
@@ -85,5 +86,11 @@ $format = Module::getInstance()->formatter;
             ]);
             return Html::tag('tr', Html::tag('th', $format->asText($groupTitle), ['colspan' => 6]));
         },
+        'pager' => [
+            'class' => 'yii\bootstrap5\LinkPager',
+            'listOptions' => ['class' => 'pagination justify-content-center my-3'],
+            'firstPageLabel' => '&larr;',
+            'lastPageLabel' => '&rarr;',
+        ],
     ]) ?>
 </div>
