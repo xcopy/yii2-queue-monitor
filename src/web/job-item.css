@@ -67,7 +67,6 @@
 .job-item.bg-warning,
 .job-item.bg-danger {
     border-radius: 4px;
-    border-top: 1px solid #fff;
 }
 :hover + .job-item.bg-default,
 .bg-info + .job-item.bg-default,

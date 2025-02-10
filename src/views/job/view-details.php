@@ -13,10 +13,13 @@ use zhuravljov\yii\queue\monitor\Module;
 
 echo $this->render('_view-nav', ['record' => $record]);
 
+$this->title = Module::t('main', 'Details');
 $this->params['breadcrumbs'][] = Module::t('main', 'Details');
 
 JobItemAsset::register($this);
+
 ?>
+
 <div class="monitor-job-details">
     <?= DetailView::widget([
         'model' => $record,
@@ -68,7 +71,7 @@ JobItemAsset::register($this);
         ],
         'options' => ['class' => 'table table-hover'],
     ]) ?>
-    
+
     <?php Pjax::begin() ?>
     <?= ListView::widget([
         'dataProvider' => new ActiveDataProvider([

@@ -3,7 +3,7 @@
  * @var \yii\web\View $this
  */
 
-use yii\bootstrap\Alert;
+use yii\bootstrap5\Alert;
 use yii\helpers\Html;
 
 $aliases = [

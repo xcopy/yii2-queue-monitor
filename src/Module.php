@@ -47,13 +47,13 @@ class Module extends \yii\base\Module implements BootstrapInterface
      * @inheritdoc
      */
     public $defaultRoute = 'job/index';
-    
+
     public function init()
     {
         parent::init();
         $this->registerTranslations();
     }
-    
+
     /**
      * @inheritdoc
      */
@@ -76,7 +76,7 @@ class Module extends \yii\base\Module implements BootstrapInterface
             throw new InvalidConfigException('The module must be used for web application only.');
         }
     }
-    
+
     private function registerTranslations()
     {
         if (!isset(Yii::$app->i18n->translations['queue-monitor/*'])) {
@@ -91,7 +91,7 @@ class Module extends \yii\base\Module implements BootstrapInterface
             ];
         }
     }
-    
+
     /**
      * Module translator.
      *

@@ -7,7 +7,7 @@
 
 namespace zhuravljov\yii\queue\monitor\assets;
 
-use yii\bootstrap\BootstrapAsset;
+use yii\bootstrap5\BootstrapAsset;
 use yii\web\AssetBundle;
 
 /**

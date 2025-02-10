@@ -4,7 +4,7 @@
  * @var JobFilter $filter
  */
 
-use yii\bootstrap\ActiveForm;
+use yii\bootstrap5\ActiveForm;
 use yii\helpers\Url;
 use zhuravljov\yii\queue\monitor\filters\JobFilter;
 use zhuravljov\yii\queue\monitor\Module;
@@ -48,7 +48,7 @@ use zhuravljov\yii\queue\monitor\Module;
         <?= Module::t('main', 'Search') ?>
     </button>
     <?php if (JobFilter::restoreParams()): ?>
-        <a href="<?= Url::to(['/' . Yii::$app->controller->route]) ?>" class="btn btn-default">
+        <a href="<?= Url::to(['/' . Yii::$app->controller->route]) ?>" class="btn btn-secondary">
             <?= Module::t('main', 'Reset') ?>
         </a>
     <?php endif ?>

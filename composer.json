@@ -8,6 +8,10 @@
         {
             "name": "Roman Zhuravlev",
             "email": "zhuravljov@gmail.com"
+        },
+        {
+            "name": "Kairat Jenishev",
+            "email": "kairat.jenishev@gmail.com"
         }
     ],
     "support": {
@@ -19,7 +23,8 @@
         "ext-pdo": "*",
         "yiisoft/yii2": "~2.0.14",
         "yiisoft/yii2-queue": ">=2.2.0",
-        "yiisoft/yii2-bootstrap": "~2.0.0"
+        "yiisoft/yii2-bootstrap5": "~2.0",
+        "twbs/bootstrap-icons": "^1.8"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

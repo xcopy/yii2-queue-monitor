@@ -9,6 +9,7 @@ namespace zhuravljov\yii\queue\monitor\filters;
 
 use DateTime;
 use Yii;
+use yii\db\Expression;
 use zhuravljov\yii\queue\monitor\Module;
 use zhuravljov\yii\queue\monitor\records\PushQuery;
 use zhuravljov\yii\queue\monitor\records\PushRecord;
@@ -131,13 +132,23 @@ class JobFilter extends BaseFilter
     public function search()
     {
         $query = PushRecord::find();
+
         if ($this->hasErrors()) {
             return $query->andWhere('1 = 0');
         }
 
+        $isPgsql = Yii::$app->db->driverName == 'pgsql';
+        $like = $isPgsql ? 'ilike' : 'like';
+
         $query->andFilterWhere(['push.sender_name' => $this->sender]);
-        $query->andFilterWhere(['like', 'push.job_class', $this->class]);
-        $query->andFilterWhere(['like', 'push.job_data', $this->contains]);
+        $query->andFilterWhere([$like, 'push.job_class', $this->class]);
+        $query->andFilterWhere([
+            $like,
+            $isPgsql
+                ? new Expression("encode(push.job_data, 'escape')")
+                : 'push.job_data',
+            $this->contains
+        ]);
         $query->andFilterWhere(['>=', 'push.pushed_at', $this->parseDatetime($this->pushed_after)]);
         $query->andFilterWhere(['<=', 'push.pushed_at', $this->parseDatetime($this->pushed_before, true)]);
 
@@ -193,7 +204,7 @@ class JobFilter extends BaseFilter
      */
     private function parseDatetime($value, $isEnd = false)
     {
-        $dt = DateTime::createFromFormat('Y-m-d\TH:i', $value);
+        $dt = DateTime::createFromFormat('Y-m-d\TH:i', $value ?? '');
         if (!$dt) {
             return null;
         }

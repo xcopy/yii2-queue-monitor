@@ -4,7 +4,7 @@
  * @var \zhuravljov\yii\queue\monitor\records\PushRecord $record
  */
 
-use yii\bootstrap\Html;
+use yii\bootstrap5\Html;
 use yii\data\ActiveDataProvider;
 use yii\grid\GridView;
 use yii\helpers\VarDumper;
@@ -13,10 +13,13 @@ use zhuravljov\yii\queue\monitor\records\ExecRecord;
 
 echo $this->render('_view-nav', ['record' => $record]);
 
-$this->params['breadcrumbs'][] = Module::t('main', 'Attempts');
+$this->title = Module::t('main', 'Attempts');
+$this->params['breadcrumbs'][] = $this->title;
 
 $format = Module::getInstance()->formatter;
+
 ?>
+
 <div class="monitor-job-attempts">
     <?= GridView::widget([
         'dataProvider' => new ActiveDataProvider([
