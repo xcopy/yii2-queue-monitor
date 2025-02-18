@@ -9,6 +9,7 @@ use yii\data\ActiveDataProvider;
 use yii\widgets\ListView;
 use yii\widgets\Pjax;
 use zhuravljov\yii\queue\monitor\assets\JobItemAsset;
+use zhuravljov\yii\queue\monitor\base\LinkPager;
 use zhuravljov\yii\queue\monitor\filters\JobFilter;
 use zhuravljov\yii\queue\monitor\Module;
 use zhuravljov\yii\queue\monitor\widgets\FilterBar;
@@ -49,12 +50,7 @@ JobItemAsset::register($this);
                 'emptyTextOptions' => ['class' => Module::t('main', 'empty lead')],
                 'itemView' => '_index-item',
                 'itemOptions' => ['tag' => null],
-                'pager' => [
-                    'class' => 'yii\bootstrap5\LinkPager',
-                    'listOptions' => ['class' => 'pagination justify-content-center my-3'],
-                    'firstPageLabel' => '&larr;',
-                    'lastPageLabel' => '&rarr;',
-                ],
+                'pager' => ['class' => LinkPager::class],
             ]) ?>
             <?php Pjax::end() ?>
         </div>

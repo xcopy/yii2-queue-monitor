@@ -8,6 +8,7 @@ use yii\bootstrap5\Html;
 use yii\data\ActiveDataProvider;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
+use zhuravljov\yii\queue\monitor\base\LinkPager;
 use zhuravljov\yii\queue\monitor\filters\WorkerFilter;
 use zhuravljov\yii\queue\monitor\Module;
 use zhuravljov\yii\queue\monitor\records\WorkerRecord;
@@ -86,11 +87,6 @@ $format = Module::getInstance()->formatter;
             ]);
             return Html::tag('tr', Html::tag('th', $format->asText($groupTitle), ['colspan' => 6]));
         },
-        'pager' => [
-            'class' => 'yii\bootstrap5\LinkPager',
-            'listOptions' => ['class' => 'pagination justify-content-center my-3'],
-            'firstPageLabel' => '&larr;',
-            'lastPageLabel' => '&rarr;',
-        ],
+        'pager' => ['class' => LinkPager::class],
     ]) ?>
 </div>
